@@ -30,11 +30,57 @@ class Chemistry(BoxLayout):
 
     def el(self, *arg):
         self.get_element = self.element_enter.text
+        element_base = {'H': [1, 2.20, 1, 'nonmetal'],
+                        'He': [2, 'none', 4, 'nonmetal'],
+                        'Li': [3, 0.98, 7, 'metal'],
+                        'Be': [4, 1.57, 9, 'metal'],
+                        'B': [5, 2.04, 10, 'metalloid'],
+                        'C': [6, 2.55, 12, 'nonmetal'],
+                        'N': [7, 3.04,14, 'nonmetal'],
+                        'O': [8, 3.44, 16, 'nonmetal'],
+                        'F': [9, 3.98, 19, 'nonmetal'],
+                        'Ne': [10, 'none', 20, 'nonmetal'],
+                        'Na': [11, 0.93, 23, 'metal'],
+                        'Mg': [12, 1.31, 24, 'metal'],
+                        'Al': [13, 1.61, 27, 'metal'],
+                        'Si': [14, 1.90, 28, 'metalloid'],
+                        'P': [15, 2.19, 28, 'nonmetal'],
+                        'S': [16, 2.58, 32, 'nonmetal'],
+                        'Cl': [17, 3.16, 35.5, 'nonmetal'],
+                        'Ar': [18, 'none', 40, 'nonmetal'],
+                        'K': [19, 0.82, 39, 'metal'],
+                        'Ca': [20, 1, 40, 'metal'],
+                        'Sc': [21, 1.36, 45, 'metal'],
+                        'Ti': [22, 1.54, 48, 'metal'],
+                        'V': [23, 1.63, 51, 'metal'],
+                        'Cr': [24, 1.66, 52, 'metal'],
+                        'Mn': [25, 1.55, 55, 'metal'],
+                        'Fe': [26, 1.83, 56, 'metal'],
+                        'Co': [27, 1.88, 59, 'metal'],
+                        'Ni': [28, 1.91, 59, 'metal'],
+                        'Cu': [29, 1.90, 64, 'metal'],
+                        'Zn': [30, 1.65, 65, 'metal'],
+                        'Ga': [31, 1.81, 70, 'metal'],
+                        'Ge': [32, 2.01, 73, 'metalloid'],
+                        'As': [33, 2.18, 75, 'meta-like'],
+                        'Se': [34, 2.55, 79, 'nonmetal'],
+                        'Br': [35, 2.96, 80, 'nonmetal'],
+                        'Kr': [36, 'none', 84, 'nonmetal'],
+                        'Rb': [37, 0.82, 85, 'nonmetal'],
+                        'Sr': [38, 0.95, 88, 'metal'],
+                        'Y': [39, 1.22, 89, 'metal'],
+                        'Tc': [40, 1.9, 91, 'metal'],
+                        'Nb': [41, 1.60, 93, 'metal'],
+                        'Mo': [42, 2.16, 96, 'metal'],
+                        'Zr': [43, 2.10, 98, 'metal'],
+                        'Ru': [43, 2.20, 101, 'metal'],
+                        'Rh': [45, 2.28, 103, 'metal'],
+                        'Pd': [46, 2.20, 106, 'metal']}
         if self.get_element ==  'H':
             self.reply.text += '\n                 H\nprotons: 1\nelectrons: 1\nelectronegativity: 2.20\nmass: 1\ntype: nonmetal\n'
             self.element_enter.text = ''
         elif self.get_element == 'He':
-            self.reply.text += '\n                He\nprotons: 2\nelectrons: 2\nelectronegativity: none\nmass: 4\ntype: nonmetall\n'
+            self.reply.text += '\n                He\nprotons: 2\nelectrons: 2\nelectronegativity: none\nmass: 4\ntype: nonmetal\n'
             self.element_enter.text = ''
         elif self.get_element == 'Li':
             self.reply.text += '\n                Li\nprotons: 3\nelectrons: 3\nelectronegativity: 0.98\nmass: 7\ntype: metal\n'
@@ -43,7 +89,7 @@ class Chemistry(BoxLayout):
             self.reply.text += '\n                Be\nprotons: 4\nelectrons: 4\nelectronegativity: 1.57\nmass: 9\ntype: metal\n'
             self.element_enter.text = ''
         elif self.get_element == 'B':
-            self.reply.text += '\n                 B\nprotons: 5\nelectrons: 5\nelectronegativity: 2.04\nmass: 10\ntype: metal-like\n'
+            self.reply.text += '\n                 B\nprotons: 5\nelectrons: 5\nelectronegativity: 2.04\nmass: 10\ntype: metalloid\n'
             self.element_enter.text = ''
         elif self.get_element == 'C':
             self.reply.text += '\n                 C\nprotons: 6\nelectrons: 6\nelectronegativity: 2.55\nmass: 12\ntype: nonmetal\n'
@@ -70,7 +116,7 @@ class Chemistry(BoxLayout):
             self.reply.text += '\n                Al\nprotons: 13\nelectrons: 13\nelectronegativity: 1.61\nmass: 27\ntype: metal\n'
             self.element_enter.text = ''
         elif self.get_element == 'Si':
-            self.reply.text += '\n                Si\nprotons: 14\nelectrons: 14\nelectronegativity: 1.90\nmass: 28\ntype: metal-like\n'
+            self.reply.text += '\n                Si\nprotons: 14\nelectrons: 14\nelectronegativity: 1.90\nmass: 28\ntype: metalloid\n'
             self.element_enter.text = ''
         elif self.get_element == 'P':
             self.reply.text += '\n                 P\nprotons: 15\nelectrons: 15\nelectronegativity: 2.19\nmass: 31\ntype: nonmetal\n'
@@ -103,7 +149,7 @@ class Chemistry(BoxLayout):
             self.reply.text += '\n                Cr\nprotons: 24\nelectrons: 24\nelectronegativity: 1.66\nmass: 52\ntype: metal\n'
             self.element_enter.text = ''
         elif self.get_element == 'Mn':
-            self.reply.text += '\n                Mn\nprotons: 25\nelectrons: 25\nelectronegativity: 1.55\nmass: 55\ntype: metal\n'
+            self.reply.text += '\n                Mn\protons: 25\nelectrons: 25\nelectronegativity: 1.55\nmass: 55\ntype: metal\n'
             self.element_enter.text = ''
         elif self.get_element == 'Fe':
             self.reply.text += '\n                Fe\nprotons: 26\nelectrons: 26\nelectronegativity: 1.83\nmass: 56\ntype: metal\n'
@@ -124,10 +170,10 @@ class Chemistry(BoxLayout):
             self.reply.text += '\n                Ga\nprotons: 31\nelectrons: 31\nelectronegativity: 1.81\nmass: 70\ntype: metal\n'
             self.element_enter.text = ''
         elif self.get_element == 'Ge':
-            self.reply.text += '\n                Ge\nprotons: 32\nelectrons: 32\nelectronegativity: 2.01\nmass: 73\ntype: metal-like\n'
+            self.reply.text += '\n                Ge\nprotons: 32\nelectrons: 32\nelectronegativity: 2.01\nmass: 73\ntype: metalloid\n'
             self.element_enter.text = ''
         elif self.get_element == 'As':
-            self.reply.text += '\n                As\nprotons: 33\nelectrons: 33\nelectronegativity: 2.18\nmass: 75\ntype: metal-like\n'
+            self.reply.text += '\n                As\nprotons: 33\nelectrons: 33\nelectronegativity: 2.18\nmass: 75\ntype: metalloid\n'
             self.element_enter.text = ''
         elif self.get_element == 'Se':
             self.reply.text += '\n                Se\nprotons: 34\nelectrons: 34\nelectronegativity: 2.55\nmass: 79\ntype: nonmetal\n'
