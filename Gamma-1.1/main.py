@@ -7,7 +7,7 @@ from algebra import Algebra
 from geometry import Geometry
 from physics import Physics
 from chemistry import Chemistry
-from navigationtools import NavigationLayout, NavigationDrawer
+from navigationtools import NavigationLayout, NavigationDrawer, NavigationDrawerContent
 from buttons import ToHomeButton
 
 
@@ -43,6 +43,7 @@ class HelpOnApp(MDApp):
         self.main_screen = NavigationLayout()
 
         self.navigation_drawer = NavigationDrawer()
+        self.navigation_drawer.add_widget(NavigationDrawerContent())
 
         self.screen_manager = ScreenManager(transition=NoTransition())
         self.home_screen = Screen(name="Home")

@@ -14,7 +14,7 @@ class Chemistry(BoxLayout):
          self.reading_elements_info()
     def reading_elements_info(self, *args):
         self.element_enter = TextInput(hint_text='Enter element name')
-        self.read_el_info = Button(text='Read', size_hint =(.2, 1), on_press=self.el)
+        self.read_el_info = Button(text='Read', size_hint =(.2, 1), on_press=self.get_element_info)
         self.element_box = BoxLayout()
         self.element_box.add_widget(self.element_enter)
         self.element_box.add_widget(self.read_el_info)
@@ -28,7 +28,7 @@ class Chemistry(BoxLayout):
         self.add_widget(screen)
         
 
-    def el(self, *arg):
+    def get_element_info(self, *arg):
         self.get_element = self.element_enter.text
         element_base = {'H': [1, 2.20, 1, 'nonmetal'],
                         'He': [2, 'none', 4, 'nonmetal'],
@@ -76,3 +76,15 @@ class Chemistry(BoxLayout):
                         'Ru': [43, 2.20, 101, 'metal'],
                         'Rh': [45, 2.28, 103, 'metal'],
                         'Pd': [46, 2.20, 106, 'metal']}
+
+        element_charge = element_base[self.get_element][0]
+        element_electronegativity = element_base[self.get_element][1]
+        element_Ar = element_base[self.get_element][2]
+        element_type = element_base[self.get_element][3]
+
+        self.reply.text += f'''
+                Charge: {element_charge}
+                Electronegativity: {element_electronegativity}
+                Ar: {element_Ar}
+                Type: {element_type}
+                        '''

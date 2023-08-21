@@ -1,11 +1,12 @@
-from kivymd.uix.button import MDTextButton, MDRectangleFlatIconButton as NavigationButton, MDRoundFlatIconButton
+from kivymd.uix.button import MDTextButton, MDRectangleFlatIconButton, MDRoundFlatIconButton
 
-class ToHomeButton(MDTextButton):
+class NavigationButton(MDRectangleFlatIconButton):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.text = 'Home'
-
-class ScreenChangerButton(NavigationButton):
+        self.icon_color = (1, 1, 1, 1)
+        self.line_color = (0, 0, 0, 0)
+        self.text_color = (1, 1, 1, 1)
+class ScreenChangerButton(MDRectangleFlatIconButton):
     def __init__(self, screen_manager, text=None, **kwargs):
         super().__init__()
         self.icon_color = (1, 1, 1, 1)
@@ -19,9 +20,13 @@ class ScreenChangerButton(NavigationButton):
         if self.text is None:
             print('Screen with this name not found!')
             exit()
-
     def on_release(self):
         self.screen_manager.current = self.text
+
+class ToHomeButton(MDTextButton):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.text = 'Home'
 
 class ToAlgebraButton(ScreenChangerButton):
     icon = 'math-integral'
