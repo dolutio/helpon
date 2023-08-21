@@ -82,7 +82,7 @@ class Chemistry(BoxLayout):
         element_Ar = element_base[self.get_element][2]
         element_type = element_base[self.get_element][3]
 
-        self.reply.text += f'''
+        self.reply.text = f'''
                 Charge: {element_charge}
                 Electronegativity: {element_electronegativity}
                 Ar: {element_Ar}

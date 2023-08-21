@@ -8,5 +8,7 @@ class NavigationDrawerContent(BoxLayout):
         self.orientation = 'vertical'
         
         self.feedback_btn = NavigationButton(icon="account", text='FeedBack')
+        self.language_btn = NavigationButton(icon='earth', text='Language')
         
         self.add_widget(self.feedback_btn)
+        self.add_widget(self.language_btn)

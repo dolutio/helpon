@@ -6,6 +6,9 @@ class NavigationButton(MDRectangleFlatIconButton):
         self.icon_color = (1, 1, 1, 1)
         self.line_color = (0, 0, 0, 0)
         self.text_color = (1, 1, 1, 1)
+        self.font_size += 7.5
+        
+        
 class ScreenChangerButton(MDRectangleFlatIconButton):
     def __init__(self, screen_manager, text=None, **kwargs):
         super().__init__()
