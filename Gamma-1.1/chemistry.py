@@ -1,11 +1,15 @@
+from kivy.uix.dropdown import DropDown
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivymd.uix.button import MDTextButton
 
 from kivy.core.window import Window
+
+from buttons import ChemistryLabel
 
 class Chemistry(BoxLayout):
     orientation = 'vertical'
@@ -13,18 +17,16 @@ class Chemistry(BoxLayout):
          super().__init__()
          self.reading_elements_info()
     def reading_elements_info(self, *args):
-        self.element_enter = TextInput(hint_text='Enter element name')
-        self.read_el_info = Button(text='Read', size_hint =(.2, 1), on_press=self.get_element_info)
+        self.element_enter = TextInput(hint_text='Enter element name', size_hint_y=.2, pos_hint={'top': 1})
+        self.read_el_info = Button(text='Read', size_hint=(.2, .2), pos_hint={'top': 1}, on_press=self.get_element_info)
         self.element_box = BoxLayout()
         self.element_box.add_widget(self.element_enter)
         self.element_box.add_widget(self.read_el_info)
-        self.reply = Label(text='')
         self.add_widget(self.element_box)
-        layout = GridLayout(cols=1, spacing=10, size_hint_y=.5)
-        layout.bind(minimum_height=layout.setter('height'))
-        layout.add_widget(self.reply)
+        self.layout = DropDown(size_hint=(1, 1))#GridLayout(cols=1, spacing=10, size_hint_y=.5)
+        #self.layout.bind(minimum_height=self.layout.setter('height'))
         screen = ScrollView(size_hint=(1, None), size=(Window.width, Window.height-200))
-        screen.add_widget(layout)
+        screen.add_widget(self.layout)
         self.add_widget(screen)
         
 
@@ -81,10 +83,11 @@ class Chemistry(BoxLayout):
         element_electronegativity = element_base[self.get_element][1]
         element_Ar = element_base[self.get_element][2]
         element_type = element_base[self.get_element][3]
-
-        self.reply.text = f'''
+ 
+        self.layout.add_widget(ChemistryLabel(text = f'''
+                                {self.get_element}
                 Charge: {element_charge}
                 Electronegativity: {element_electronegativity}
                 Ar: {element_Ar}
                 Type: {element_type}
-                        '''
+                        '''))

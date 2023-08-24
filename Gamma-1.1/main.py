@@ -10,9 +10,6 @@ from chemistry import Chemistry
 from navigationtools import NavigationLayout, NavigationDrawer, NavigationDrawerContent
 from buttons import ToHomeButton
 
-
-
-
 Window.clearcolor = (0/255, 150/255, 150/255, 1)
 colors = {
     'Cyan': {
@@ -78,22 +75,22 @@ class HelpOnApp(MDApp):
         
         algebra_page = Algebra()
 
-        algebra_page.add_widget(ToHomeButton(on_press=self.to_home_screen))
+        algebra_page.add_widget(ToHomeButton(on_release=self.to_home_screen))
         self.algebra_screen.add_widget(algebra_page)
         
         geometry_page = Geometry()
 
-        geometry_page.add_widget(ToHomeButton(on_press=self.to_home_screen))
+        geometry_page.add_widget(ToHomeButton(on_release=self.to_home_screen))
         self.geometry_screen.add_widget(geometry_page)
         
         physics_page = Physics()
         
-        physics_page.add_widget(ToHomeButton(on_press=self.to_home_screen))
+        physics_page.add_widget(ToHomeButton(on_release=self.to_home_screen))
         self.physics_screen.add_widget(physics_page)
         
         chemistry_page = Chemistry()
        
-        chemistry_page.add_widget(ToHomeButton(on_press=self.to_home_screen))
+        chemistry_page.add_widget(ToHomeButton(on_release=self.to_home_screen))
         self.chemistry_screen.add_widget(chemistry_page)
         
     def to_home_screen(self, *args):
