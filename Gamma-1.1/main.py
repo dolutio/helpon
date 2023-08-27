@@ -1,6 +1,7 @@
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 from kivy.core.window import Window
+from kivy.core.text import LabelBase, DEFAULT_FONT
 
 from home import Home
 from algebra import Algebra
@@ -24,7 +25,7 @@ colors = {
         "FlatButtonDown": "555555",
     }}
 
-
+LabelBase.register(DEFAULT_FONT, 'DejaVuSans.ttf')
   
 
 
@@ -40,10 +41,10 @@ class HelpOnApp(MDApp):
         self.main_screen = NavigationLayout()
 
         self.navigation_drawer = NavigationDrawer()
-        self.navigation_drawer.add_widget(NavigationDrawerContent())
+        self.navigation_drawer.add_widget(NavigationDrawerContent(HelpOnApp))
 
         self.screen_manager = ScreenManager(transition=NoTransition())
-        self.home_screen = Screen(name="Home")
+        self.home_screen = Screen(name='Home')
         self.algebra_screen = Screen(name='Algebra')
         self.geometry_screen = Screen(name='Geometry')
         self.physics_screen = Screen(name='Physics')
