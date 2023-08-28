@@ -25,8 +25,8 @@ class Chemistry(BoxLayout):
         self.element_box.add_widget(self.element_enter)
         self.element_box.add_widget(self.read_el_info)
         self.add_widget(self.element_box)
-        self.reply_layout = DropDown(size_hint=(1, 1))#GridLayout(cols=1, spacing=10, size_hint_y=.5)
-        #self.layout.bind(minimum_height=self.layout.setter('height'))
+        self.reply_layout = DropDown(size_hint=(1, 1))
+
         screen = ScrollView(size_hint=(1, None), size=(Window.width, Window.height-200))
         screen.add_widget(self.reply_layout)
         self.add_widget(screen)
