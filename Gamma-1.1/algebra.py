@@ -1,7 +1,7 @@
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
-from kivy.uix.label import Label
+from uix.labels import Label
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
 
@@ -13,7 +13,7 @@ class Algebra(BoxLayout):
           self.build()
 
      def build(self):
-          alg_grand_title = Label(text='Algebra')
+          alg_grand_title = Label('Algebra', 'Algèbre', 'Алгебра', 'Հանրահաշիվ')
           alg_grand_title.font_size += 15
           
           layout = GridLayout(cols=1, spacing=10, size_hint_y=4)

@@ -32,13 +32,6 @@ class ScreenChangerButton(MDRectangleFlatIconButton, TranslationUpdateBehavior):
             exit()
     def on_release(self):
         self.screen_manager.current = self.screen_name
-class ChemistryLabel(MDTextButton):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.color = (1, 1, 1, 1)
-        self.pos_hint = {'right': 0}
-    def animation_label(self):
-        pass
 
 class ToHomeButton(MDRectangleFlatIconButton, TranslationUpdateBehavior):
     icon = 'home'

@@ -7,8 +7,8 @@ from kivymd.uix.menu import MDDropdownMenu as Menu
 
 from kivy.core.window import Window
 
-import buttons
-from buttons import FeedBackButton, LanguageButton
+import uix.buttons as buttons
+from uix.buttons import FeedBackButton, LanguageButton
 from translation import translate, translate_use_widgets_list
 
 class NavigationDrawerContent(BoxLayout):

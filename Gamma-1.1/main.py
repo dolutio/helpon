@@ -9,7 +9,7 @@ from geometry import Geometry
 from physics import Physics
 from chemistry import Chemistry
 from navigationtools import NavigationLayout, NavigationDrawer, NavigationDrawerContent
-from buttons import ToHomeButton
+from uix.buttons import ToHomeButton
 
 Window.clearcolor = (0/255, 150/255, 150/255, 1)
 colors = {

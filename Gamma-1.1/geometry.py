@@ -1,7 +1,7 @@
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
-from kivy.uix.label import Label
+from uix.labels import Label
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
 
@@ -16,7 +16,7 @@ class Geometry(BoxLayout):
             self.sin = BoxLayout(orientation='vertical')
             self.cos = BoxLayout(orientation='vertical')
     
-            geometry_title = Label(text='Geometry')
+            geometry_title = Label('Geometry', 'Géométrie', 'Геометрия', 'Երկրաչափություն')
             geometry_title.font_size += 20
             layout.add_widget(geometry_title)
     

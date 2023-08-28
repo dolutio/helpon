@@ -9,14 +9,14 @@ from kivymd.uix.button import MDTextButton
 
 from kivy.core.window import Window
 
-from buttons import ChemistryLabel
+from uix.labels import ChemistryLabel
 
 class Chemistry(BoxLayout):
     orientation = 'vertical'
     def __init__(self):
-         super().__init__()
-         self.index = 0
-         self.reading_elements_info()
+        super().__init__()
+        self.index = 0
+        self.reading_elements_info()
     def reading_elements_info(self, *args):
         self.element_enter = TextInput(hint_text='Enter element name', size_hint_y=.25, pos_hint={'top': 1})
         self.read_el_info = Button(text='Read', size_hint=(.2, .25), pos_hint={'top': 1}, on_press=self.get_element_info)
@@ -85,11 +85,5 @@ class Chemistry(BoxLayout):
         element_Ar = element_base[self.get_element][2]
         element_type = element_base[self.get_element][3]
  
-        self.reply_layout.add_widget(ChemistryLabel(text = f'''
-                                {self.get_element}
-                Charge: {element_charge}
-                Electronegativity: {element_electronegativity}
-                Ar: {element_Ar}
-                Type: {element_type}
-                        '''), index=10)
+        self.reply_layout.add_widget(ChemistryLabel(self.get_element, element_charge, element_electronegativity, element_Ar, element_type), index=10)
         self.index += 1

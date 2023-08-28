@@ -1,7 +1,7 @@
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
-from kivy.uix.label import Label
+from uix.labels import Label
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
 
@@ -13,7 +13,7 @@ class Physics(BoxLayout):
         layout.bind(minimum_height=layout.setter('height'))
 
         layout.add_widget(Widget())        
-        ph_grand_title = Label(text='Physics')
+        ph_grand_title = Label('Physics', 'Physique', 'Физика', 'Ֆիզիկա')
         ph_grand_title.font_size += 15
         layout.add_widget(ph_grand_title)
 
