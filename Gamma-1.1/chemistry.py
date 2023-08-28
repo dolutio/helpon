@@ -30,7 +30,6 @@ class Chemistry(BoxLayout):
         screen = ScrollView(size_hint=(1, None), size=(Window.width, Window.height-200))
         screen.add_widget(self.reply_layout)
         self.add_widget(screen)
-        
 
     def get_element_info(self, *arg):
         self.get_element = self.element_enter.text
