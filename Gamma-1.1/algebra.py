@@ -151,12 +151,6 @@ class Algebra(BoxLayout):
           two_unknowns_equation_5 = Label(text='y = 4')
           layout.add_widget(two_unknowns_equation_5)
 
-
-
-
-
-
-
           screen = ScrollView(size_hint=(1, None), size=(Window.width, Window.height-100))
           screen.add_widget(layout)
 
