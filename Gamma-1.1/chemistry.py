@@ -17,6 +17,7 @@ class Chemistry(BoxLayout):
         super().__init__()
         self.index = 0
         self.reading_elements_info()
+
     def reading_elements_info(self, *args):
         self.element_enter = TextInput(hint_text='Enter element name', size_hint_y=.25, pos_hint={'top': 1})
         self.read_el_info = Button(text='Read', size_hint=(.2, .25), pos_hint={'top': 1}, on_press=self.get_element_info)
