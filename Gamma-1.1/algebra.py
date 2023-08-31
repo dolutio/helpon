@@ -1,9 +1,11 @@
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
-from uix.labels import Label
+from kivy.uix.dropdown import DropDown
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
+
+from uix.labels import Label
 
 class Algebra(BoxLayout):
      def __init__(self):
@@ -21,7 +23,8 @@ class Algebra(BoxLayout):
 
           layout.add_widget(alg_grand_title)
 
-          abb_multi_formula = Label(text='Abbreviated multiplication formula')
+          abb_multi_formula_drop = DropDown()
+          abb_multi_formula = Label('Abbreviated multiplication formula', 'Formule de multiplication abrégée', 'Сокращенная формула умножения', 'Կրճատ բազմապատկման աղյուսակ')
           abb_multi_formula.font_size += 10
           layout.add_widget(abb_multi_formula)
 
@@ -48,7 +51,7 @@ class Algebra(BoxLayout):
           amb3 = Label(text='(a - b)³ = a³ - 3a²b + 3ab² - b³')
           layout.add_widget(amb3)
 
-          discriminant = Label(text='Discriminant')
+          discriminant = Label('Discriminant', 'Discriminant', 'Дискриминант', 'Դիսկրիմինանտ')
           discriminant.font_size += 10
           layout.add_widget(discriminant)
 
@@ -56,7 +59,7 @@ class Algebra(BoxLayout):
           layout.add_widget(discformul)
 
 
-          quadrequation = Label(text='Quadratic equation')
+          quadrequation = Label('Quadratic equation', 'Équation quadratique', 'Квадратное уравнение', 'Քառակուսային հավասարում')
           quadrequation.font_size += 10
           layout.add_widget(quadrequation)
 
@@ -64,12 +67,12 @@ class Algebra(BoxLayout):
           x2form = Label(text='x2 = (-b + √D) / 2a')
           layout.add_widget(x1form)
           layout.add_widget(x2form)
-          discinfo = Label(text='(D is discriminant)')
+          discinfo = Label('(D is discriminant)', '(D c\'est discriminant)', '(D - это дискриминант)', '(D-ն դիսկրիմինանտն է)')
           layout.add_widget(discinfo)
 
 
 
-          vtheorem = Label(text='Viette\'s Theorem')
+          vtheorem = Label('Viette\'s theorem', 'Théorème de Viette', 'Теорема Виета', 'Վիետի թեորեմ')
           vtheorem.font_size += 5
           layout.add_widget(vtheorem)
 
@@ -79,7 +82,7 @@ class Algebra(BoxLayout):
           layout.add_widget(x1x2)
 
           
-          q_e_w_a_e_s_c = Label(text='Quadratic equation with an even second coefficient')
+          q_e_w_a_e_s_c = Label('Quadratic equation with an even second coefficient', 'Équation quadratique avec un deuxième coefficient pair', 'Квадратное уравнение с четным вторым коэффицентом', 'Քառակուսային հավասարում զույգ երկրորդ գործակցով')
           q_e_w_a_e_s_c.font_size += 5
           layout.add_widget(q_e_w_a_e_s_c)
           
@@ -100,10 +103,10 @@ class Algebra(BoxLayout):
           probability_example = Label(text='P = m / n')
           layout.add_widget(probability_example)
 
-          probability_m = Label(text='m is the desired result in theory')
+          probability_m = Label(text='m is the desired result')
           layout.add_widget(probability_m)
 
-          probability_n = Label(text='n is the total result')
+          probability_n = Label(text='n is the number of possible options')
           layout.add_widget(probability_n)
 
           frequency_title = Label(text='Formula for finding frequency')
@@ -116,7 +119,7 @@ class Algebra(BoxLayout):
           frequency_m = Label(text='m is desired result')
           layout.add_widget(frequency_m)
 
-          frequency_n = Label(text='n is the number of times we repeated the experiment')
+          frequency_n = Label(text='n is the number of actions')
           layout.add_widget(frequency_n)
 
           two_unknowns_equation_title = Label(text='Equation with two unknowns')

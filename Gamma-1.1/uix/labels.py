@@ -1,5 +1,6 @@
 from kivymd.uix.button import MDTextButton
 from kivy.uix.label import Label
+
 from uix.buttons import TranslationUpdateBehavior
 from translation import translate
 
@@ -23,14 +24,14 @@ class ChemistryLabel(MDTextButton, TranslationUpdateBehavior):
                 Ar: {element_Ar}
                 Type: {element_type}
                         '''
-        self.fr = self.en
 
-        self.ru = self.another_language_analogue('Заряд', 'Электроотрицательность', 'Тип')
-        self.hy = self.another_language_analogue('Լիցք', 'Էլեկտրաբացասականություն', 'Տեսակ')
+        self.fr = self.another_language_analogue('Charge', 'Électronégativité', 'n\'a pas', 'Type' , 'Métal', 'métalloïde', 'non-métal')
+        self.ru = self.another_language_analogue('Заряд', 'Электроотрицательность', 'не имеет', 'Тип', 'металл', 'металлоид', 'неметалл')
+        self.hy = self.another_language_analogue('Լիցք', 'Էլեկտրաբացասականություն', 'չունի', 'Տեսակ', 'մետաղ', 'մետաղանման', 'ոչմետաղ')
 
         self.text = translate(self.en, self.fr, self.ru, self.hy, self)
 
-    def another_language_analogue(self, element_charge, element_elneg, element_type):
-        return self.en.replace('Charge', element_charge).replace('Electronegativity', element_elneg).replace('Type', element_type)
+    def another_language_analogue(self, element_charge, element_elneg, none, element_type, metal, metalloid, nonmetal):
+        return self.en.replace('Charge', element_charge).replace('Electronegativity', element_elneg).replace('does\'nt have', none).replace('Type', element_type).replace('metalloid', metalloid).replace('nonmetal', nonmetal).replace('metal', metal)
     def animation_label(self):
         pass

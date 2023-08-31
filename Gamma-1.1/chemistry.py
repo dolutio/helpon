@@ -25,6 +25,7 @@ class Chemistry(BoxLayout):
         self.element_box.add_widget(self.element_enter)
         self.element_box.add_widget(self.read_el_info)
         self.add_widget(self.element_box)
+        self.reply_layout_parent = None
         self.reply_layout = DropDown(size_hint=(1, 1))
 
         screen = ScrollView(size_hint=(1, None), size=(Window.width, Window.height-200))
@@ -33,8 +34,9 @@ class Chemistry(BoxLayout):
 
     def get_element_info(self, *arg):
         self.get_element = self.element_enter.text
+
         element_base = {'H': [1, 2.20, 1, 'nonmetal'],
-                        'He': [2, 'none', 4, 'nonmetal'],
+                        'He': [2, 'does\'nt have', 4, 'nonmetal'],
                         'Li': [3, 0.98, 7, 'metal'],
                         'Be': [4, 1.57, 9, 'metal'],
                         'B': [5, 2.04, 10, 'metalloid'],
@@ -42,7 +44,7 @@ class Chemistry(BoxLayout):
                         'N': [7, 3.04,14, 'nonmetal'],
                         'O': [8, 3.44, 16, 'nonmetal'],
                         'F': [9, 3.98, 19, 'nonmetal'],
-                        'Ne': [10, 'none', 20, 'nonmetal'],
+                        'Ne': [10, 'does\'nt have', 20, 'nonmetal'],
                         'Na': [11, 0.93, 23, 'metal'],
                         'Mg': [12, 1.31, 24, 'metal'],
                         'Al': [13, 1.61, 27, 'metal'],
@@ -50,7 +52,7 @@ class Chemistry(BoxLayout):
                         'P': [15, 2.19, 28, 'nonmetal'],
                         'S': [16, 2.58, 32, 'nonmetal'],
                         'Cl': [17, 3.16, 35.5, 'nonmetal'],
-                        'Ar': [18, 'none', 40, 'nonmetal'],
+                        'Ar': [18, 'does\'nt have', 40, 'nonmetal'],
                         'K': [19, 0.82, 39, 'metal'],
                         'Ca': [20, 1, 40, 'metal'],
                         'Sc': [21, 1.36, 45, 'metal'],
@@ -65,10 +67,10 @@ class Chemistry(BoxLayout):
                         'Zn': [30, 1.65, 65, 'metal'],
                         'Ga': [31, 1.81, 70, 'metal'],
                         'Ge': [32, 2.01, 73, 'metalloid'],
-                        'As': [33, 2.18, 75, 'meta-like'],
+                        'As': [33, 2.18, 75, 'metalloid'],
                         'Se': [34, 2.55, 79, 'nonmetal'],
                         'Br': [35, 2.96, 80, 'nonmetal'],
-                        'Kr': [36, 'none', 84, 'nonmetal'],
+                        'Kr': [36, 'does\'nt have', 84, 'nonmetal'],
                         'Rb': [37, 0.82, 85, 'nonmetal'],
                         'Sr': [38, 0.95, 88, 'metal'],
                         'Y': [39, 1.22, 89, 'metal'],
