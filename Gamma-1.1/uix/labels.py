@@ -1,9 +1,34 @@
+from kivy.uix.dropdown import DropDown
+from kivy.uix.scrollview import ScrollView
+from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.button import MDTextButton
 from kivy.uix.label import Label
+from kivy.core.window import Window
 
 from uix.buttons import TranslationUpdateBehavior
 from translation import translate
 
+class ScrollViewTitle(ScrollView):
+    size_hint=(1, None)
+    size=(Window.width, Window.height-200)
+
+class Title(MDTextButton, TranslationUpdateBehavior):
+    def __init__(self, en=None, fr=None, ru=None, hy=None, children_labels_list=[], **kwargs):
+        super().__init__(**kwargs)
+        self.children_labels_list = children_labels_list
+        self.toggle = False
+        self.en, self.fr, self.ru, self.hy = en, fr, ru, hy
+        if en is not None:
+                self.text = translate(self.en, self.fr, self.ru, self.hy, self)
+    def on_release(self):
+        self.toggle = not self.toggle
+
+        if self.toggle:
+            for i in self.children_labels_list:
+                self.parent.add_widget(i)
+        else:
+            for i in self.children_labels_list:
+                self.parent.remove_widget(i)
 class Label(Label, TranslationUpdateBehavior):
     def __init__(self, en=None, fr=None, ru=None, hy=None, **kwargs):
         super().__init__(**kwargs)

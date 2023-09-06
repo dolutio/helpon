@@ -1,11 +1,11 @@
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
-from kivy.uix.dropdown import DropDown
+from uix.labels import ScrollViewTitle
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
 
-from uix.labels import Label
+from uix.labels import Title, Label
 
 class Algebra(BoxLayout):
      def __init__(self):
@@ -23,33 +23,45 @@ class Algebra(BoxLayout):
 
           layout.add_widget(alg_grand_title)
 
-          abb_multi_formula_drop = DropDown()
-          abb_multi_formula = Label('Abbreviated multiplication formula', 'Formule de multiplication abrégée', 'Сокращенная формула умножения', 'Կրճատ բազմապատկման աղյուսակ')
-          abb_multi_formula.font_size += 10
-          layout.add_widget(abb_multi_formula)
+          abb_multi_formula_children_labels_list = []
+          
+          
 
-          a_plus_b_in_2 = Label(text=' (a+b)² = a² + 2ab + b²', halign='left', valign='middle')
-          layout.add_widget(a_plus_b_in_2)
+          a_plus_b_in_q = Label(text=' (a+b)² = a² + 2ab + b²', halign='left', valign='middle')
+          abb_multi_formula_children_labels_list.append(a_plus_b_in_q)
 
-          a_minus_b_in_2 = Label(text=' (a-b)² = a² - 2ab + b²', halign='left', valign='middle')
-          layout.add_widget(a_minus_b_in_2)
+          a_minus_b_in_q = Label(text=' (a-b)² = a² - 2ab + b²', halign='left', valign='middle')
+          abb_multi_formula_children_labels_list.append(a_minus_b_in_q)
 
           a2mb2 = Label(text=' (a-b)(a+b) = a² - b²', halign='left', valign='middle')
-          layout.add_widget(a2mb2)
+          abb_multi_formula_children_labels_list.append(a2mb2)
+          
 
           
 
           a3pb3 = Label(text=' (a+b)(a²-ab+b²) = a³ + b³')
-          layout.add_widget(a3pb3)
+          abb_multi_formula_children_labels_list.append(a3pb3)
+          
 
           a3mb3= Label(text=' (a-b)(a²+ab+b²) = a³ - b³')
-          layout.add_widget(a3mb3)
+          abb_multi_formula_children_labels_list.append(a3mb3)
+          
 
           apb3 = Label(text='(a+b)³ = a³ + 3a²b + 3ab² + b³')
-          layout.add_widget(apb3)
+          abb_multi_formula_children_labels_list.append(apb3)
+          
 
           amb3 = Label(text='(a - b)³ = a³ - 3a²b + 3ab² - b³')
-          layout.add_widget(amb3)
+          abb_multi_formula_children_labels_list.append(amb3)
+          
+          
+          
+          abb_multi_formula = Title('Abbreviated multiplication formula', 'Formule de multiplication abrégée', 'Сокращенная формула умножения', 'Կրճատ բազմապատկման աղյուսակ', abb_multi_formula_children_labels_list)
+          abb_multi_formula_layout = BoxLayout(orientation='vertical')
+          abb_multi_formula.font_size += 10
+          abb_multi_formula_layout.add_widget(abb_multi_formula)
+          layout.add_widget(abb_multi_formula_layout)
+          print(layout.children)
 
           discriminant = Label('Discriminant', 'Discriminant', 'Дискриминант', 'Դիսկրիմինանտ')
           discriminant.font_size += 10
