@@ -1,21 +1,28 @@
 from kivy.uix.dropdown import DropDown
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.boxlayout import BoxLayout
-from kivymd.uix.button import MDTextButton
 from kivy.uix.label import Label
+from kivy.uix.button import ButtonBehavior
 from kivy.core.window import Window
 
 from uix.buttons import TranslationUpdateBehavior
 from translation import translate
 
+class TextButton(ButtonBehavior, Label):
+    ...
+
 class ScrollViewTitle(ScrollView):
     size_hint=(1, None)
     size=(Window.width, Window.height-200)
 
-class Title(MDTextButton, TranslationUpdateBehavior):
-    def __init__(self, en=None, fr=None, ru=None, hy=None, children_labels_list=[], **kwargs):
+class Title(TextButton, TranslationUpdateBehavior):
+    def __init__(self, en=None, fr=None, ru=None, hy=None, children_labels_list=[], title_size_hint=1, **kwargs):
         super().__init__(**kwargs)
         self.children_labels_list = children_labels_list
+        self.title_size_hint = title_size_hint
+        self.color = (1, 1, 1, 1)
+        self.font_size += 10
+        self.pos_hint = {"center_x": .5}
         self.toggle = False
         self.en, self.fr, self.ru, self.hy = en, fr, ru, hy
         if en is not None:
@@ -26,17 +33,20 @@ class Title(MDTextButton, TranslationUpdateBehavior):
         if self.toggle:
             for i in self.children_labels_list:
                 self.parent.add_widget(i)
+                self.parent.size_hint_y = self.title_size_hint
         else:
             for i in self.children_labels_list:
                 self.parent.remove_widget(i)
+                self.parent.size_hint_y = 1
 class Label(Label, TranslationUpdateBehavior):
     def __init__(self, en=None, fr=None, ru=None, hy=None, **kwargs):
         super().__init__(**kwargs)
         self.en, self.fr, self.ru, self.hy = en, fr, ru, hy
+
         if en is not None:
             self.text = translate(self.en, self.fr, self.ru, self.hy, self)
 
-class ChemistryLabel(MDTextButton, TranslationUpdateBehavior):
+class ChemistryLabel(TextButton, TranslationUpdateBehavior):
     def __init__(self, element_name, element_charge, element_electronegativity, element_Ar, element_type, **kwargs):
         super().__init__(**kwargs)
         self.color = (1, 1, 1, 1)

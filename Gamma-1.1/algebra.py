@@ -56,73 +56,67 @@ class Algebra(BoxLayout):
           
           
           
-          abb_multi_formula = Title('Abbreviated multiplication formula', 'Formule de multiplication abrégée', 'Сокращенная формула умножения', 'Կրճատ բազմապատկման աղյուսակ', abb_multi_formula_children_labels_list)
-          abb_multi_formula_layout = BoxLayout(orientation='vertical')
-          abb_multi_formula.font_size += 10
+          abb_multi_formula = Title('Abbreviated multiplication formula', 'Formule de multiplication abrégée', 'Сокращенная формула умножения', 'Կրճատ բազմապատկման աղյուսակ', abb_multi_formula_children_labels_list, 5)
+          abb_multi_formula_layout = GridLayout(cols=1, spacing=10)
           abb_multi_formula_layout.add_widget(abb_multi_formula)
           layout.add_widget(abb_multi_formula_layout)
           print(layout.children)
 
-          discriminant = Label('Discriminant', 'Discriminant', 'Дискриминант', 'Դիսկրիմինանտ')
-          discriminant.font_size += 10
-          layout.add_widget(discriminant)
-
-          discformul = Label(text='D = b² - 4ac')
-          layout.add_widget(discformul)
+          discriminant = Title('Discriminant', 'Discriminant', 'Дискриминант', 'Դիսկրիմինանտ', [Label(text='D = b² - 4ac')], 1)
+          discriminant_layout = GridLayout(cols=1, spacing=10)
+          discriminant_layout.add_widget(discriminant)
+          layout.add_widget(discriminant_layout)
 
 
-          quadrequation = Label('Quadratic equation', 'Équation quadratique', 'Квадратное уравнение', 'Քառակուսային հավասարում')
-          quadrequation.font_size += 10
-          layout.add_widget(quadrequation)
+          
 
           x1form = Label(text='x1 = (-b - √D) / 2a')
           x2form = Label(text='x2 = (-b + √D) / 2a')
-          layout.add_widget(x1form)
-          layout.add_widget(x2form)
-          discinfo = Label('(D is discriminant)', '(D c\'est discriminant)', '(D - это дискриминант)', '(D-ն դիսկրիմինանտն է)')
-          layout.add_widget(discinfo)
 
+          discinfo = Label('(D is discriminant)', '(D c\'est discriminant)', '(D - это дискриминант)', '(D-ն դիսկրիմինանտն է)')
+          
 
 
           vtheorem = Label('Viette\'s theorem', 'Théorème de Viette', 'Теорема Виета', 'Վիետի թեորեմ')
           vtheorem.font_size += 5
-          layout.add_widget(vtheorem)
 
           x1px2 = Label(text='x1 + x2 = -b')
-          layout.add_widget(x1px2)
           x1x2 = Label(text='x1 * x2 = c')
-          layout.add_widget(x1x2)
 
           
           q_e_w_a_e_s_c = Label('Quadratic equation with an even second coefficient', 'Équation quadratique avec un deuxième coefficient pair', 'Квадратное уравнение с четным вторым коэффицентом', 'Քառակուսային հավասարում զույգ երկրորդ գործակցով')
           q_e_w_a_e_s_c.font_size += 5
-          layout.add_widget(q_e_w_a_e_s_c)
           
           quad_example_1 = Label(text='D = k² - ac')
-          layout.add_widget(quad_example_1)
 
           quad_example_2 = Label(text='x1 = (-k - √D) / a')
-          layout.add_widget(quad_example_2)
 
           quad_example_3 = Label(text='x2 = (-k + √D) / a')
-          layout.add_widget(quad_example_3)
+
+          quadratic_equation_layout = GridLayout(cols=1, spacing=10)
+
+          quadratic_equation_childrens_list = [x1form, x2form, discinfo, vtheorem, x1px2, x1x2, q_e_w_a_e_s_c, quad_example_1, quad_example_2, quad_example_3]
+
+          quadrequation = Title('Quadratic equation', 'Équation quadratique', 'Квадратное уравнение', 'Քառակուսային հավասարում', quadratic_equation_childrens_list, 10)
+          quadratic_equation_layout.add_widget(quadrequation)
+          layout.add_widget(quadratic_equation_layout)
           
           
-          probability_title = Label(text='Formula for finding probability')
-          probability_title.font_size += 10
-          layout.add_widget(probability_title)
 
           probability_example = Label(text='P = m / n')
-          layout.add_widget(probability_example)
 
           probability_m = Label(text='m is the desired result')
-          layout.add_widget(probability_m)
 
           probability_n = Label(text='n is the number of possible options')
-          layout.add_widget(probability_n)
 
-          frequency_title = Label(text='Formula for finding frequency')
-          frequency_title.font_size += 10
+          probability_childrens_list = [probability_example, probability_m, probability_n]
+
+          probability_layout = GridLayout(cols=1, spacing=10)
+          probability_title = Title('Formula for finding the probability', 'Formule pour trouver la probabilité', 'Формула для нахождения вероятности', 'Հավանականությունը գտնելու բանաձև', probability_childrens_list)
+          probability_layout.add_widget(probability_title)
+          layout.add_widget(probability_layout)
+
+          frequency_title = Title(text='Formula for finding frequency')
           layout.add_widget(frequency_title)
 
           frequency_example = Label(text='W = m / n')

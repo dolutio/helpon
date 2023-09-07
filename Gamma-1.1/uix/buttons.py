@@ -1,4 +1,5 @@
 from kivymd.uix.button import MDTextButton, MDRectangleFlatIconButton
+from kivy.uix.button import ButtonBehavior
 
 from translation import translate
 
