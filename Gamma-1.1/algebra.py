@@ -112,21 +112,24 @@ class Algebra(BoxLayout):
           probability_childrens_list = [probability_example, probability_m, probability_n]
 
           probability_layout = GridLayout(cols=1, spacing=10)
-          probability_title = Title('Formula for finding the probability', 'Formule pour trouver la probabilité', 'Формула для нахождения вероятности', 'Հավանականությունը գտնելու բանաձև', probability_childrens_list)
+          probability_title = Title('Formula for finding the probability', 'Formule pour trouver la probabilité', 'Формула для нахождения вероятности', 'Հավանականությունը գտնելու բանաձև', probability_childrens_list, 1)
           probability_layout.add_widget(probability_title)
           layout.add_widget(probability_layout)
 
-          frequency_title = Title(text='Formula for finding frequency')
-          layout.add_widget(frequency_title)
+          
 
           frequency_example = Label(text='W = m / n')
-          layout.add_widget(frequency_example)
 
-          frequency_m = Label(text='m is desired result')
-          layout.add_widget(frequency_m)
+          frequency_m = Label('m is the quantity of a certain result', 'm est la quantité d’un certain résultat', 'm - количество определенного результата', 'm-ը որոշակի արդյունքի թիվն է')
 
-          frequency_n = Label(text='n is the number of actions')
-          layout.add_widget(frequency_n)
+          frequency_n = Label(text='n is the quantity of actions')
+
+          frequency_childrens_list = [frequency_example, frequency_m, frequency_n]
+          
+          frequency_layout = GridLayout(cols=1, spacing=10)
+          frequency_title = Title('Formula for finding frequency', 'Formule pour trouver la fréquence', 'Формула для нахождения частоты', 'Հաճախականությունը որոշելու բանաձև', frequency_childrens_list, 3)
+          frequency_layout.add_widget(frequency_title)
+          layout.add_widget(frequency_layout)
 
           two_unknowns_equation_title = Label(text='Equation with two unknowns')
           two_unknowns_equation_title.font_size += 10
