@@ -25,6 +25,7 @@ class Chemistry(BoxLayout):
         self.element_box.add_widget(self.element_enter)
         self.element_box.add_widget(self.read_el_info)
         self.add_widget(self.element_box)
+
         self.reply_layout_parent = None
         self.reply_layout = DropDown(size_hint=(1, 1))
 

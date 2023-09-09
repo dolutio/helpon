@@ -18,7 +18,7 @@ class Algebra(BoxLayout):
           alg_grand_title = Label('Algebra', 'Algèbre', 'Алгебра', 'Հանրահաշիվ')
           alg_grand_title.font_size += 15
           
-          layout = GridLayout(cols=1, spacing=10, size_hint_y=4)
+          layout = GridLayout(cols=1, spacing=10, size_hint_y=2.5)
           layout.bind(minimum_height=layout.setter('height'))
 
           layout.add_widget(alg_grand_title)
