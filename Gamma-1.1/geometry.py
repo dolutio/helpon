@@ -68,7 +68,6 @@ class Geometry(BoxLayout):
             cos_theorem_formul = Label(text='a² = b² + c² - 2bc*cos(α)')
             cos_children_list = [cos_theorem_formul]
 
-            layout.add_widget(cos_theorem_formul)
             cos_theorem_layout = GridLayout(cols=1, spacing=10)
             cos_theorem_label = Title('The theorem of cosines', 'Théorème des cosinus', 'Теорема косинусов', 'Կոսինուսների թեորեմը', cos_children_list, 1)
             cos_theorem_layout.add_widget(cos_theorem_label)
