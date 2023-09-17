@@ -9,7 +9,7 @@ class Physics(BoxLayout):
     orientation = 'vertial'
     def __init__(self):
         super().__init__()
-        layout = GridLayout(cols=1, spacing=10, size_hint_y=2)
+        layout = GridLayout(cols=1, spacing=10, size_hint_y=2.5)
         layout.bind(minimum_height=layout.setter('height'))
 
         layout.add_widget(Widget())        

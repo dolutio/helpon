@@ -26,11 +26,6 @@ colors = {
     }}
 
 LabelBase.register(DEFAULT_FONT, 'DejaVuSans.ttf')
-  
-
-
-
-
 
 class HelpOnApp(MDApp):
     icon = 'HelpOn.png'

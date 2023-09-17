@@ -60,7 +60,6 @@ class Algebra(BoxLayout):
           abb_multi_formula_layout = GridLayout(cols=1, spacing=10)
           abb_multi_formula_layout.add_widget(abb_multi_formula)
           layout.add_widget(abb_multi_formula_layout)
-          print(layout.children)
 
           discriminant = Title('Discriminant', 'Discriminant', 'Дискриминант', 'Դիսկրիմինանտ', [Label(text='D = b² - 4ac')], 1)
           discriminant_layout = GridLayout(cols=1, spacing=10)
@@ -112,7 +111,7 @@ class Algebra(BoxLayout):
           probability_childrens_list = [probability_example, probability_m, probability_n]
 
           probability_layout = GridLayout(cols=1, spacing=10)
-          probability_title = Title('Formula for finding the probability', 'Formule pour trouver la probabilité', 'Формула для нахождения вероятности', 'Հավանականությունը գտնելու բանաձև', probability_childrens_list, 1)
+          probability_title = Title('Formula for finding the probability', 'Formule pour trouver la probabilité', 'Формула для нахождения вероятности', 'Հավանականությունը գտնելու բանաձև', probability_childrens_list, 3)
           probability_layout.add_widget(probability_title)
           layout.add_widget(probability_layout)
 

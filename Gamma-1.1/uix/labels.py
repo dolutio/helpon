@@ -25,11 +25,13 @@ class Title(TextButton, TranslationUpdateBehavior):
         self.pos_hint = {"center_x": .5}
         self.text_size = [500, None]
         self.halign = 'center'
+        print(self.size)
 
         self.toggle = False
         self.en, self.fr, self.ru, self.hy = en, fr, ru, hy
         if en is not None:
                 self.text = translate(self.en, self.fr, self.ru, self.hy, self)
+        print(self.size)
     def on_release(self):
         self.toggle = not self.toggle
         
