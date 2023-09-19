@@ -5,7 +5,7 @@ from kivy.uix.label import Label
 from kivy.uix.button import ButtonBehavior
 from kivy.core.window import Window
 
-from uix.buttons import TranslationUpdateBehavior
+from uix.buttons import MDTextButton, TranslationUpdateBehavior
 from translation import translate
 
 class TextButton(ButtonBehavior, Label):
@@ -25,13 +25,11 @@ class Title(TextButton, TranslationUpdateBehavior):
         self.pos_hint = {"center_x": .5}
         self.text_size = [500, None]
         self.halign = 'center'
-        print(self.size)
 
         self.toggle = False
         self.en, self.fr, self.ru, self.hy = en, fr, ru, hy
         if en is not None:
                 self.text = translate(self.en, self.fr, self.ru, self.hy, self)
-        print(self.size)
     def on_release(self):
         self.toggle = not self.toggle
         
@@ -51,7 +49,7 @@ class Label(Label, TranslationUpdateBehavior):
         if en is not None:
             self.text = translate(self.en, self.fr, self.ru, self.hy, self)
 
-class ChemistryLabel(TextButton, TranslationUpdateBehavior):
+class ChemistryLabel(MDTextButton, TranslationUpdateBehavior):
     def __init__(self, element_name, element_charge, element_electronegativity, element_Ar, element_type, **kwargs):
         super().__init__(**kwargs)
         self.color = (1, 1, 1, 1)

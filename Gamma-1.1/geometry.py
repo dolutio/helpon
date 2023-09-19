@@ -73,13 +73,15 @@ class Geometry(BoxLayout):
             cos_theorem_layout.add_widget(cos_theorem_label)
             layout.add_widget(cos_theorem_layout)
     
-            pyt_theorem_label = Label(text='Pythagorean theorem', font_size=30)
-            layout.add_widget(pyt_theorem_label)
-    
-            pyt_theorem_formul = Label(text='a² + b² = c²')
-            layout.add_widget(pyt_theorem_formul)
             
     
+            pythagorean_theorem_formul = Label(text='a² + b² = c²')
+            pythagorean_theorem_children_list = [pythagorean_theorem_formul]
+            
+            pythagorean_theorem_layout = GridLayout(cols=1, spacing=10)
+            pythagorean_theorem_label = Title('Pythagorean theorem', 'Théorème de Pythagore', 'Теорема Пифагора', 'Պյութագորասի թեորեմ', pythagorean_theorem_children_list, 1)
+            pythagorean_theorem_layout.add_widget(pythagorean_theorem_label)
+            layout.add_widget(pythagorean_theorem_layout)
 
     
     

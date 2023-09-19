@@ -1,7 +1,7 @@
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
-from uix.labels import Label
+from uix.labels import Title, Label
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
 
@@ -19,34 +19,23 @@ class Physics(BoxLayout):
 
         layout.add_widget(Widget())        
 
-        values_title = Label(text='Values', font_size=30)
-        layout.add_widget(values_title)
+        designations_layout = GridLayout(cols=1, spacing=10)
+        designations_title = Title('Designations', 'Désignations', 'Обозначения', 'Նշանակումներ')
+        layout.add_widget(designations_title)
 
-        value_volume = Label(text='V is volume')
-        layout.add_widget(value_volume)
-        value_speed = Label(text='v is speed')
-        layout.add_widget(value_speed)
-        value_square = Label(text='S is square')
-        layout.add_widget(value_square)
-        value_length = Label(text='s is length')
-        layout.add_widget(value_length)
-        value_height = Label(text='h is height')
-        layout.add_widget(value_height)
-        value_density = Label(text='ρ is density')
-        layout.add_widget(value_density)
-        value_time = Label(text='t is time')
-        layout.add_widget(value_time)
-        value_mass = Label(text='m is mass')
-        layout.add_widget(value_mass)
-        value_grav = Label(text='g is gravitational constant')        
-        layout.add_widget(value_grav)
-        value_pressure = Label(text='P is pressure')
-        value_force = Label(text='F is force')
-        layout.add_widget(value_force)
-        value_work =  Label(text='A is work')
-        layout.add_widget(value_work)
-        value_power = Label(text='N is power')
-        layout.add_widget(value_power)
+        designation_of_volume = Label('V is volume', 'V', 'V - это объем', 'V-ն ծավալն է')
+        designation_of_speed = Label('v is speed', 'v', 'v', 'v')
+        designation_of_square = Label('S is square', 'S', 'S', 'S')
+        designation_of_length = Label('s is length', 's', 's', 's')
+        designation_of_height = Label('h is height', 'h', 'h', 'h')
+        designation_of_density = Label('ρ is density', 'ρ', 'ρ', 'ρ')
+        designation_of_time = Label('t is time', 't', 't', 't')
+        designation_of_mass = Label('m is mass', 'm', 'm', '')
+        designation_of_grav = Label('g is gravitational constant', 'g', 'g', 'g')   
+        designation_of_pressure = Label('P is pressure', 'P', 'P', 'P')
+        designation_of_force = Label('F is force', 'F', 'F', 'F')
+        designation_of_work =  Label('A is work', 'A', 'A', 'A')
+        designation_of_power = Label('N is power', 'N', 'N', 'N')
 
         square_formulas_title = Label(text='Formulas for finding square', font_size=30)
         layout.add_widget(square_formulas_title)
