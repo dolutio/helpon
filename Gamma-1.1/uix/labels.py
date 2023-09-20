@@ -16,10 +16,10 @@ class ScrollViewTitle(ScrollView):
     size=(Window.width, Window.height-200)
 
 class Title(TextButton, TranslationUpdateBehavior):
-    def __init__(self, en=None, fr=None, ru=None, hy=None, children_labels_list=[], title_size_hint=1, **kwargs):
+    def __init__(self, en=None, fr=None, ru=None, hy=None, children_labels_list=[], **kwargs):
         super().__init__(**kwargs)
         self.children_labels_list = children_labels_list
-        self.title_size_hint = title_size_hint
+        self.title_size_hint = len(children_labels_list)
         self.color = (1, 1, 1, 1)
         self.font_size += 10
         self.pos_hint = {"center_x": .5}

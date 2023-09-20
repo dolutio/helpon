@@ -49,7 +49,7 @@ class Geometry(BoxLayout):
             trigonometry_childrens_list = [tang_formul, cotang_formul, sin90mx, cos90mx, tang90mx, cotang90mx, sin180mx, cos180mx, tang180mx, cotang180mx, sin2x_plus_cos2x, tangcotangformul]
             
             trigonometry_layout = GridLayout(cols=1, spacing=10)
-            trigonometry = Title('Trigonometry', 'Trigonométrie', 'Тригонометрия', 'Տրիգոնոմետրիա', trigonometry_childrens_list, 5)
+            trigonometry = Title('Trigonometry', 'Trigonométrie', 'Тригонометрия', 'Տրիգոնոմետրիա', trigonometry_childrens_list)
             trigonometry_layout.add_widget(trigonometry)
             layout.add_widget(trigonometry_layout)
 
@@ -59,7 +59,7 @@ class Geometry(BoxLayout):
             sine_children_list = [sine_theorem_formul]
             
             sine_layout = GridLayout(cols=1, spacing=10)
-            sine_theorem_label = Title('The theorem of sines', 'Théorème des sinus', 'Теорема синусов', 'Սինուսների թեորեմը', sine_children_list, 1)
+            sine_theorem_label = Title('The theorem of sines', 'Théorème des sinus', 'Теорема синусов', 'Սինուսների թեորեմը', sine_children_list)
             sine_layout.add_widget(sine_theorem_label)
             layout.add_widget(sine_layout)
     
@@ -69,7 +69,7 @@ class Geometry(BoxLayout):
             cos_children_list = [cos_theorem_formul]
 
             cos_theorem_layout = GridLayout(cols=1, spacing=10)
-            cos_theorem_label = Title('The theorem of cosines', 'Théorème des cosinus', 'Теорема косинусов', 'Կոսինուսների թեորեմը', cos_children_list, 1)
+            cos_theorem_label = Title('The theorem of cosines', 'Théorème des cosinus', 'Теорема косинусов', 'Կոսինուսների թեորեմը', cos_children_list)
             cos_theorem_layout.add_widget(cos_theorem_label)
             layout.add_widget(cos_theorem_layout)
     
@@ -79,7 +79,7 @@ class Geometry(BoxLayout):
             pythagorean_theorem_children_list = [pythagorean_theorem_formul]
             
             pythagorean_theorem_layout = GridLayout(cols=1, spacing=10)
-            pythagorean_theorem_label = Title('Pythagorean theorem', 'Théorème de Pythagore', 'Теорема Пифагора', 'Պյութագորասի թեորեմ', pythagorean_theorem_children_list, 1)
+            pythagorean_theorem_label = Title('Pythagorean theorem', 'Théorème de Pythagore', 'Теорема Пифагора', 'Պյութագորասի թեորեմ', pythagorean_theorem_children_list)
             pythagorean_theorem_layout.add_widget(pythagorean_theorem_label)
             layout.add_widget(pythagorean_theorem_layout)
 

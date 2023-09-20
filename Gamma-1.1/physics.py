@@ -19,47 +19,52 @@ class Physics(BoxLayout):
 
         layout.add_widget(Widget())        
 
+        
+
+        designation_of_volume = Label('V is volume', 'V est le volume', 'V - это объем', 'V-ն ծավալն է')
+        designation_of_speed = Label('v is speed', 'v', 'v - это скорость', 'v-ն արագությունն է')
+        designation_of_area = Label('S is area', 'S', 'S - это площадь', 'S-ը մակրեսեն է')
+        designation_of_length = Label('s is length', 's', 's - это длина', 's-ը երկարությունն է')
+        designation_of_height = Label('h is height', 'h', 'h - это высота', 'h- բարձրությունն է')
+        designation_of_density = Label('ρ is density', 'ρ', 'ρ - это плотность', 'ρ-ն խտությունն է')
+        designation_of_time = Label('t is time', 't', 't - это время', 't-ն ժամանակն է')
+        designation_of_mass = Label('m is mass', 'm', 'm - масса', 'm-ը զանգվածն է')
+        designation_of_grav = Label('g is gravitational constant', 'g', 'g - это ускорение свободного падения', 'g-ն ազատ անկման արագացումն է')   
+        designation_of_pressure = Label('P is pressure', 'P', 'P - это давление', 'P-ն ճնշումն է')
+        designation_of_force = Label('F is force', 'F', 'F - это сила', 'F-ը ուժն է')
+        designation_of_work =  Label('A is work', 'A', 'A - это работа', 'A-ն աշխատանքն է')
+        designation_of_power = Label('N is power', 'N', 'N - мощность', 'N-ը հզորությունն է')
+
+        designations_children_list = [designation_of_volume, designation_of_speed, designation_of_area, designation_of_length, designation_of_height, designation_of_density, designation_of_time, designation_of_mass, designation_of_grav, designation_of_pressure, designation_of_force, designation_of_work, designation_of_power]
+        
         designations_layout = GridLayout(cols=1, spacing=10)
-        designations_title = Title('Designations', 'Désignations', 'Обозначения', 'Նշանակումներ')
-        layout.add_widget(designations_title)
+        designations_title = Title('Designations', 'Désignations', 'Обозначения', 'Նշանակումներ', designations_children_list)
+        designations_layout.add_widget(designations_title)
+        layout.add_widget(designations_layout)
 
-        designation_of_volume = Label('V is volume', 'V', 'V - это объем', 'V-ն ծավալն է')
-        designation_of_speed = Label('v is speed', 'v', 'v', 'v')
-        designation_of_square = Label('S is square', 'S', 'S', 'S')
-        designation_of_length = Label('s is length', 's', 's', 's')
-        designation_of_height = Label('h is height', 'h', 'h', 'h')
-        designation_of_density = Label('ρ is density', 'ρ', 'ρ', 'ρ')
-        designation_of_time = Label('t is time', 't', 't', 't')
-        designation_of_mass = Label('m is mass', 'm', 'm', '')
-        designation_of_grav = Label('g is gravitational constant', 'g', 'g', 'g')   
-        designation_of_pressure = Label('P is pressure', 'P', 'P', 'P')
-        designation_of_force = Label('F is force', 'F', 'F', 'F')
-        designation_of_work =  Label('A is work', 'A', 'A', 'A')
-        designation_of_power = Label('N is power', 'N', 'N', 'N')
+        area_formula_1 = Label(text='S = h²')
+        area_formula_2 = Label(text='S = V / h')
+        area_formula_3 = Label(text='S = F / P')
+        
+        area_children_list = [area_formula_1, area_formula_2, area_formula_3]
+        
+        area_formulas_layout = GridLayout(cols=1, spacing=10)
+        area_formulas_title = Title('Formula for finding area', '', 'Формула нахождения площади', 'Մակերեսը գտնելու բանաձևը', area_children_list)
+        area_formulas_layout.add_widget(area_formulas_title)
+        layout.add_widget(area_formulas_layout)
 
-        square_formulas_title = Label(text='Formulas for finding square', font_size=30)
-        layout.add_widget(square_formulas_title)
-
-
-        square_formula_1 = Label(text='S = h²')
-        layout.add_widget(square_formula_1)
-
-        square_formula_2 = Label(text='S = V / h')
-        layout.add_widget(square_formula_2)
-
-        square_formula_3 = Label(text='S = F / P')
-        layout.add_widget(square_formula_3)
-
-        length_formulas_title = Label(text='Formulas for finding length')
-        length_formulas_title.font_size  += 10
-        layout.add_widget(length_formulas_title)      
+              
 
 
         length_formula_1 = Label(text='s = vt')
-        layout.add_widget(length_formula_1)
-
         length_formula_2 = Label(text='s = A / F')
-        layout.add_widget(length_formula_2)
+
+        length_children_list = [length_formula_1, length_formula_2]
+        
+        length_formulas_layout = GridLayout(cols=1, spacing=10)
+        length_formulas_title = Title('Formulas for finding length', '', '', 'Երկարությունը գտնելու բանաձևը', length_children_list)
+        length_formulas_layout.add_widget(length_formulas_title)
+        layout.add_widget(length_formulas_layout)
 
         time_formulas_title = Label(text='Formulas for finding time', font_size=30)
         layout.add_widget(time_formulas_title)

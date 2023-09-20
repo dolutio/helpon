@@ -56,12 +56,12 @@ class Algebra(BoxLayout):
           
           
           
-          abb_multi_formula = Title('Abbreviated multiplication formula', 'Formule de multiplication abrégée', 'Сокращенная формула умножения', 'Կրճատ բազմապատկման աղյուսակ', abb_multi_formula_children_labels_list, 5)
+          abb_multi_formula = Title('Abbreviated multiplication formula', 'Formule de multiplication abrégée', 'Сокращенная формула умножения', 'Կրճատ բազմապատկման աղյուսակ', abb_multi_formula_children_labels_list)
           abb_multi_formula_layout = GridLayout(cols=1, spacing=10)
           abb_multi_formula_layout.add_widget(abb_multi_formula)
           layout.add_widget(abb_multi_formula_layout)
 
-          discriminant = Title('Discriminant', 'Discriminant', 'Дискриминант', 'Դիսկրիմինանտ', [Label(text='D = b² - 4ac')], 1)
+          discriminant = Title('Discriminant', 'Discriminant', 'Дискриминант', 'Դիսկրիմինանտ', [Label(text='D = b² - 4ac')])
           discriminant_layout = GridLayout(cols=1, spacing=10)
           discriminant_layout.add_widget(discriminant)
           layout.add_widget(discriminant_layout)
@@ -96,7 +96,7 @@ class Algebra(BoxLayout):
 
           quadratic_equation_childrens_list = [x1form, x2form, discinfo, vtheorem, x1px2, x1x2, q_e_w_a_e_s_c, quad_example_1, quad_example_2, quad_example_3]
 
-          quadrequation = Title('Quadratic equation', 'Équation quadratique', 'Квадратное уравнение', 'Քառակուսային հավասարում', quadratic_equation_childrens_list, 10)
+          quadrequation = Title('Quadratic equation', 'Équation quadratique', 'Квадратное уравнение', 'Քառակուսային հավասարում', quadratic_equation_childrens_list)
           quadratic_equation_layout.add_widget(quadrequation)
           layout.add_widget(quadratic_equation_layout)
           
@@ -111,7 +111,7 @@ class Algebra(BoxLayout):
           probability_childrens_list = [probability_example, probability_m, probability_n]
 
           probability_layout = GridLayout(cols=1, spacing=10)
-          probability_title = Title('Formula for finding the probability', 'Formule pour trouver la probabilité', 'Формула для нахождения вероятности', 'Հավանականությունը գտնելու բանաձև', probability_childrens_list, 3)
+          probability_title = Title('Formula for finding the probability', 'Formule pour trouver la probabilité', 'Формула для нахождения вероятности', 'Հավանականությունը գտնելու բանաձև', probability_childrens_list)
           probability_layout.add_widget(probability_title)
           layout.add_widget(probability_layout)
 
@@ -126,7 +126,7 @@ class Algebra(BoxLayout):
           frequency_childrens_list = [frequency_example, frequency_m, frequency_n]
           
           frequency_layout = GridLayout(cols=1, spacing=10)
-          frequency_title = Title('Formula for finding frequency', 'Formule pour trouver la fréquence', 'Формула для нахождения частоты', 'Հաճախականությունը որոշելու բանաձև', frequency_childrens_list, 3)
+          frequency_title = Title('Formula for finding frequency', 'Formule pour trouver la fréquence', 'Формула для нахождения частоты', 'Հաճախականությունը որոշելու բանաձև', frequency_childrens_list)
           frequency_layout.add_widget(frequency_title)
           layout.add_widget(frequency_layout)
 
