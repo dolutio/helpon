@@ -98,3 +98,9 @@ class LanguageButton(NavigationButton, TranslationUpdateBehavior):
         super().__init__(**kwargs)
         self.en, self.fr, self.ru, self.hy = 'Language', 'Langue', 'Язык', 'Լեզու'
         self.text = translate(self.en, self.fr, self.ru, self.hy, self)
+class GitHubButton(NavigationButton, TranslationUpdateBehavior):
+    icon = 'github'
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.en, self.fr, self.ru, self.hy = 'GitHub', 'GitHub', 'GitHub', 'GitHub'
+        self.text = translate(self.en, self.fr, self.ru, self.hy, self)

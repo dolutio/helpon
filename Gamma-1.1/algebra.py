@@ -22,37 +22,18 @@ class Algebra(BoxLayout):
           layout.bind(minimum_height=layout.setter('height'))
 
           layout.add_widget(alg_grand_title)
-
-          abb_multi_formula_children_labels_list = []
           
           
 
           a_plus_b_in_q = Label(text=' (a+b)² = a² + 2ab + b²', halign='left', valign='middle')
-          abb_multi_formula_children_labels_list.append(a_plus_b_in_q)
-
           a_minus_b_in_q = Label(text=' (a-b)² = a² - 2ab + b²', halign='left', valign='middle')
-          abb_multi_formula_children_labels_list.append(a_minus_b_in_q)
+          a_q_minus_b_in_q = Label(text=' (a-b)(a+b) = a² - b²', halign='left', valign='middle')
+          a_in_cube_plus_b_in_cube = Label(text=' (a+b)(a²-ab+b²) = a³ + b³')
+          a_in_cube_minus_b_in_cube = Label(text=' (a-b)(a²+ab+b²) = a³ - b³')
+          a_plus_b_in_cube = Label(text='(a+b)³ = a³ + 3a²b + 3ab² + b³')
+          a_minus_b_in_cube = Label(text='(a - b)³ = a³ - 3a²b + 3ab² - b³')
 
-          a2mb2 = Label(text=' (a-b)(a+b) = a² - b²', halign='left', valign='middle')
-          abb_multi_formula_children_labels_list.append(a2mb2)
-          
-
-          
-
-          a3pb3 = Label(text=' (a+b)(a²-ab+b²) = a³ + b³')
-          abb_multi_formula_children_labels_list.append(a3pb3)
-          
-
-          a3mb3= Label(text=' (a-b)(a²+ab+b²) = a³ - b³')
-          abb_multi_formula_children_labels_list.append(a3mb3)
-          
-
-          apb3 = Label(text='(a+b)³ = a³ + 3a²b + 3ab² + b³')
-          abb_multi_formula_children_labels_list.append(apb3)
-          
-
-          amb3 = Label(text='(a - b)³ = a³ - 3a²b + 3ab² - b³')
-          abb_multi_formula_children_labels_list.append(amb3)
+          abb_multi_formula_children_labels_list = [a_plus_b_in_q, a_minus_b_in_q, a_q_minus_b_in_q, a_in_cube_plus_b_in_cube, a_in_cube_minus_b_in_cube, a_plus_b_in_cube, a_minus_b_in_cube]
           
           
           
@@ -129,6 +110,7 @@ class Algebra(BoxLayout):
           frequency_title = Title('Formula for finding frequency', 'Formule pour trouver la fréquence', 'Формула для нахождения частоты', 'Հաճախականությունը որոշելու բանաձև', frequency_childrens_list)
           frequency_layout.add_widget(frequency_title)
           layout.add_widget(frequency_layout)
+          'C'
 
           two_unknowns_equation_title = Label(text='Equation with two unknowns')
           two_unknowns_equation_title.font_size += 10

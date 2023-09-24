@@ -9,7 +9,7 @@ class Geometry(BoxLayout):
     orientation = 'vertical'
     def __init__(self, *args):
             super().__init__()
-            layout = GridLayout(cols=1, spacing=10, size_hint_y=2)
+            layout = GridLayout(cols=1, spacing=10, size_hint_y=2.5)
             layout.bind(minimum_height=layout.setter('height'))
             #tang, cotang, sin2+cos2, sin90-x, cos90-x, sin180-x, cos180-x, Pifagor
             self.trig = BoxLayout()
@@ -79,12 +79,18 @@ class Geometry(BoxLayout):
             pythagorean_theorem_children_list = [pythagorean_theorem_formul]
             
             pythagorean_theorem_layout = GridLayout(cols=1, spacing=10)
-            pythagorean_theorem_label = Title('Pythagorean theorem', 'Théorème de Pythagore', 'Теорема Пифагора', 'Պյութագորասի թեորեմ', pythagorean_theorem_children_list)
+            pythagorean_theorem_label = Title('Pythagorean theorem', 'Théorème de Pythagore', 'Теорема Пифагора', 'Պյութագորասի թեորեմը', pythagorean_theorem_children_list)
             pythagorean_theorem_layout.add_widget(pythagorean_theorem_label)
             layout.add_widget(pythagorean_theorem_layout)
 
-    
-    
+            distance_between_two_points_formula = Label(text='s = √((x₁ - x₂)² + (y₁ - y₂)²)')
+
+            distance_between_two_points_children_list = [distance_between_two_points_formula]
+
+            distance_between_two_points_layout = GridLayout(cols=1, spacing=10)
+            distance_between_two_points_title = Title('Distance between two points', 'Distance entre deux points', 'Расстояние между двумя точками', 'Երկու կետերի միջև հեռավորությունը', distance_between_two_points_children_list)
+            distance_between_two_points_layout.add_widget(distance_between_two_points_title)
+            layout.add_widget(distance_between_two_points_layout)
     
             screen = ScrollView(size_hint=(1, None), size=(Window.width, Window.height-100))
             screen.add_widget(layout)

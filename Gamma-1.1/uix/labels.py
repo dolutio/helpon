@@ -16,18 +16,20 @@ class ScrollViewTitle(ScrollView):
     size=(Window.width, Window.height-200)
 
 class Title(TextButton, TranslationUpdateBehavior):
-    def __init__(self, en=None, fr=None, ru=None, hy=None, children_labels_list=[], **kwargs):
+    def __init__(self, en=None, fr=None, ru=None, hy=None, children_labels_list=[], slow_mode=False, **kwargs):
         super().__init__(**kwargs)
         self.children_labels_list = children_labels_list
         self.title_size_hint = len(children_labels_list)
         self.color = (1, 1, 1, 1)
-        self.font_size += 10
+        self.font_size += 12.5
         self.pos_hint = {"center_x": .5}
         self.text_size = [500, None]
         self.halign = 'center'
 
         self.toggle = False
         self.en, self.fr, self.ru, self.hy = en, fr, ru, hy
+        if slow_mode:
+            self.font_size -= 5
         if en is not None:
                 self.text = translate(self.en, self.fr, self.ru, self.hy, self)
     def on_release(self):
@@ -45,6 +47,7 @@ class Label(Label, TranslationUpdateBehavior):
     def __init__(self, en=None, fr=None, ru=None, hy=None, **kwargs):
         super().__init__(**kwargs)
         self.en, self.fr, self.ru, self.hy = en, fr, ru, hy
+        self.font_size += 5
 
         if en is not None:
             self.text = translate(self.en, self.fr, self.ru, self.hy, self)

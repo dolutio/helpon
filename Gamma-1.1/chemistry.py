@@ -20,7 +20,7 @@ class Chemistry(BoxLayout):
 
     def reading_elements_info(self, *args):
         self.element_enter = TextInput(hint_text='Enter element name', size_hint_y=.25, pos_hint={'top': 1})
-        self.read_el_info = Button(text='Read', size_hint=(.2, .25), pos_hint={'top': 1}, on_press=self.get_element_info)
+        self.read_el_info = Button(text='Search', size_hint=(.2, .25), pos_hint={'top': 1}, on_press=self.get_element_info)
         self.element_box = BoxLayout()
         self.element_box.add_widget(self.element_enter)
         self.element_box.add_widget(self.read_el_info)

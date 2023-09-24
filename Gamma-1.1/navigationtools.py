@@ -8,7 +8,7 @@ from kivymd.uix.menu import MDDropdownMenu as Menu
 from kivy.core.window import Window
 
 import uix.buttons as buttons
-from uix.buttons import FeedBackButton, LanguageButton
+from uix.buttons import FeedBackButton, LanguageButton, GitHubButton
 from translation import translate, translate_use_widgets_list
 
 class NavigationDrawerContent(BoxLayout):
@@ -20,9 +20,11 @@ class NavigationDrawerContent(BoxLayout):
         
         self.feedback_btn = FeedBackButton()
         self.language_btn = LanguageButton(on_release=lambda *a: self.menu_open())
+        self.github_btn = GitHubButton()
 
         self.add_widget(self.feedback_btn)
         self.add_widget(self.language_btn)
+        self.add_widget(self.github_btn)
 
     def menu_open(self):
         self.menu_items = [{
