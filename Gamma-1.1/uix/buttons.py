@@ -1,4 +1,7 @@
+import webbrowser
+
 from kivymd.uix.button import MDTextButton, MDRectangleFlatIconButton
+from kivy.uix.button import ButtonBehavior
 
 from translation import translate
 
@@ -32,13 +35,6 @@ class ScreenChangerButton(MDRectangleFlatIconButton, TranslationUpdateBehavior):
             exit()
     def on_release(self):
         self.screen_manager.current = self.screen_name
-class ChemistryLabel(MDTextButton):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.color = (1, 1, 1, 1)
-        self.pos_hint = {'right': 0}
-    def animation_label(self):
-        pass
 
 class ToHomeButton(MDRectangleFlatIconButton, TranslationUpdateBehavior):
     icon = 'home'
@@ -97,6 +93,8 @@ class FeedBackButton(NavigationButton, TranslationUpdateBehavior):
         super().__init__(**kwargs)
         self.en, self.fr, self.ru, self.hy = 'FeedBack', 'Rétroaction', 'Обратная связь', 'Հետադարձ կապ'
         self.text = translate(self.en, self.fr, self.ru, self.hy, self)
+    def on_release(self, *args):
+        webbrowser.open('https://twitter.com/messages/1694368880422944768-1694368880422944768')
 
 class LanguageButton(NavigationButton, TranslationUpdateBehavior):
     icon = 'earth'
@@ -104,3 +102,11 @@ class LanguageButton(NavigationButton, TranslationUpdateBehavior):
         super().__init__(**kwargs)
         self.en, self.fr, self.ru, self.hy = 'Language', 'Langue', 'Язык', 'Լեզու'
         self.text = translate(self.en, self.fr, self.ru, self.hy, self)
+class GitHubButton(NavigationButton, TranslationUpdateBehavior):
+    icon = 'github'
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.en, self.fr, self.ru, self.hy = 'GitHub', 'GitHub', 'GitHub', 'GitHub'
+        self.text = translate(self.en, self.fr, self.ru, self.hy, self)
+    def on_release(self, *args):
+        webbrowser.open('https://github.com/dolutio')

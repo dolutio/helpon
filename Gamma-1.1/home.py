@@ -1,6 +1,6 @@
 from kivy.uix.boxlayout import BoxLayout
 
-from buttons import ToAlgebraButton, ToGeometryaButton, ToPhysicsButton, ToChemistryButton
+from uix.buttons import ToAlgebraButton, ToGeometryaButton, ToPhysicsButton, ToChemistryButton
 
 class Home(BoxLayout):
     orientation = 'vertical'

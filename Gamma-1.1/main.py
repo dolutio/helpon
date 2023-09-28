@@ -9,28 +9,23 @@ from geometry import Geometry
 from physics import Physics
 from chemistry import Chemistry
 from navigationtools import NavigationLayout, NavigationDrawer, NavigationDrawerContent
-from buttons import ToHomeButton
+from uix.buttons import ToHomeButton
 
 Window.clearcolor = (0/255, 150/255, 150/255, 1)
 colors = {
     'Cyan': {
-        "200": '#009898',
-        "500": '#009898',
-        "700": '#009898'},
+        "200": '#009696',
+        "500": '#009696',
+        "700": '#009696'},
     "Light": {
-        "StatusBar": "#009898",
-        "AppBar": "#009898",
-        "Background": "#009898",
-        "CardsDialogs": "#009898",
+        "StatusBar": "#009696",
+        "AppBar": "#009696",
+        "Background": "#009696",
+        "CardsDialogs": "#009696",
         "FlatButtonDown": "555555",
     }}
 
 LabelBase.register(DEFAULT_FONT, 'DejaVuSans.ttf')
-  
-
-
-
-
 
 class HelpOnApp(MDApp):
     icon = 'HelpOn.png'
