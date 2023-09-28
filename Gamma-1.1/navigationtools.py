@@ -23,8 +23,9 @@ class NavigationDrawerContent(BoxLayout):
         self.github_btn = GitHubButton()
 
         self.add_widget(self.feedback_btn)
-        self.add_widget(self.language_btn)
         self.add_widget(self.github_btn)
+        self.add_widget(self.language_btn)
+        
 
     def menu_open(self):
         self.menu_items = [{

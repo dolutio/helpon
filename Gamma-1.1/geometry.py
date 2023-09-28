@@ -9,7 +9,7 @@ class Geometry(BoxLayout):
     orientation = 'vertical'
     def __init__(self, *args):
             super().__init__()
-            layout = GridLayout(cols=1, spacing=10, size_hint_y=2.5)
+            layout = GridLayout(cols=1, spacing=10, size_hint_y=1)
             layout.bind(minimum_height=layout.setter('height'))
             #tang, cotang, sin2+cos2, sin90-x, cos90-x, sin180-x, cos180-x, Pifagor
             self.trig = BoxLayout()

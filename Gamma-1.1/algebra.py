@@ -18,7 +18,7 @@ class Algebra(BoxLayout):
           alg_grand_title = Label('Algebra', 'Algèbre', 'Алгебра', 'Հանրահաշիվ')
           alg_grand_title.font_size += 15
           
-          layout = GridLayout(cols=1, spacing=10, size_hint_y=2.5)
+          layout = GridLayout(cols=1, spacing=10, size_hint_y=1)
           layout.bind(minimum_height=layout.setter('height'))
 
           layout.add_widget(alg_grand_title)
@@ -50,8 +50,8 @@ class Algebra(BoxLayout):
 
           
 
-          x1form = Label(text='x1 = (-b - √D) / 2a')
-          x2form = Label(text='x2 = (-b + √D) / 2a')
+          x1form = Label(text='x₁ = (-b - √D) / 2a')
+          x2form = Label(text='x₂ = (-b + √D) / 2a')
 
           discinfo = Label('(D is discriminant)', '(D c\'est discriminant)', '(D - это дискриминант)', '(D-ն դիսկրիմինանտն է)')
           
@@ -60,8 +60,8 @@ class Algebra(BoxLayout):
           vtheorem = Label('Viette\'s theorem', 'Théorème de Viette', 'Теорема Виета', 'Վիետի թեորեմ')
           vtheorem.font_size += 5
 
-          x1px2 = Label(text='x1 + x2 = -b')
-          x1x2 = Label(text='x1 * x2 = c')
+          x1px2 = Label(text='x₁ + x₂ = -b')
+          x1x2 = Label(text='x₁ * x₂ = c')
 
           
           q_e_w_a_e_s_c = Label('Quadratic equation with an even second coefficient', 'Équation quadratique avec un deuxième coefficient pair', 'Квадратное уравнение с четным вторым коэффицентом', 'Քառակուսային հավասարում զույգ երկրորդ գործակցով')
@@ -69,9 +69,9 @@ class Algebra(BoxLayout):
           
           quad_example_1 = Label(text='D = k² - ac')
 
-          quad_example_2 = Label(text='x1 = (-k - √D) / a')
+          quad_example_2 = Label(text='x₁ = (-k - √D) / a')
 
-          quad_example_3 = Label(text='x2 = (-k + √D) / a')
+          quad_example_3 = Label(text='x₂ = (-k + √D) / a')
 
           quadratic_equation_layout = GridLayout(cols=1, spacing=10)
 
@@ -85,9 +85,9 @@ class Algebra(BoxLayout):
 
           probability_example = Label(text='P = m / n')
 
-          probability_m = Label(text='m is the desired result')
+          probability_m = Label('m is the desired result', 'm est le résultat souhaité', 'm - желаемый результат', 'm-ը ցանկալի արդյունքն է')
 
-          probability_n = Label(text='n is the number of possible options')
+          probability_n = Label('n is the number of possible options', 'n est le nombre d\'options possibles', 'n - количество возможных вариантов', 'n-ը հնարավոր տարբերակների քանակն է')
 
           probability_childrens_list = [probability_example, probability_m, probability_n]
 
@@ -110,39 +110,6 @@ class Algebra(BoxLayout):
           frequency_title = Title('Formula for finding frequency', 'Formule pour trouver la fréquence', 'Формула для нахождения частоты', 'Հաճախականությունը որոշելու բանաձև', frequency_childrens_list)
           frequency_layout.add_widget(frequency_title)
           layout.add_widget(frequency_layout)
-          'C'
-
-          two_unknowns_equation_title = Label(text='Equation with two unknowns')
-          two_unknowns_equation_title.font_size += 10
-          layout.add_widget(two_unknowns_equation_title)
-
-          layout.add_widget(Widget())
-
-          two_unknowns_equation_1 = BoxLayout(orientation='vertical')
-
-          two_un_example = Label(text='x + y = 10\n5x + 3y = 42')
-          two_unknowns_equation_1.add_widget(two_un_example)
-          layout.add_widget(two_unknowns_equation_1)
-
-          layout.add_widget(Widget())
-          layout.add_widget(Widget())
-
-
-          two_unknowns_equation_2 = BoxLayout(orientation='vertical')
-
-          two_unknowns_equation_2.add_widget(Label(text='5x + 5y = 50\n[size=40]-[/size]\n5x + 3y = 42', markup=1))
-          layout.add_widget(two_unknowns_equation_2)
-
-          layout.add_widget(Widget())
-
-          two_unknowns_equation_3 = Label(text='0 * x + 2y = 8')
-          layout.add_widget(two_unknowns_equation_3)
-
-          two_unknowns_equation_4 = Label(text='2y = 8')
-          layout.add_widget(two_unknowns_equation_4)
-
-          two_unknowns_equation_5 = Label(text='y = 4')
-          layout.add_widget(two_unknowns_equation_5)
 
           screen = ScrollView(size_hint=(1, None), size=(Window.width, Window.height-100))
           screen.add_widget(layout)

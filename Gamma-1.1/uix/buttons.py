@@ -1,3 +1,5 @@
+import webbrowser
+
 from kivymd.uix.button import MDTextButton, MDRectangleFlatIconButton
 from kivy.uix.button import ButtonBehavior
 
@@ -91,6 +93,8 @@ class FeedBackButton(NavigationButton, TranslationUpdateBehavior):
         super().__init__(**kwargs)
         self.en, self.fr, self.ru, self.hy = 'FeedBack', 'Rétroaction', 'Обратная связь', 'Հետադարձ կապ'
         self.text = translate(self.en, self.fr, self.ru, self.hy, self)
+    def on_release(self, *args):
+        webbrowser.open('https://twitter.com/messages/1694368880422944768-1694368880422944768')
 
 class LanguageButton(NavigationButton, TranslationUpdateBehavior):
     icon = 'earth'
@@ -104,3 +108,5 @@ class GitHubButton(NavigationButton, TranslationUpdateBehavior):
         super().__init__(**kwargs)
         self.en, self.fr, self.ru, self.hy = 'GitHub', 'GitHub', 'GitHub', 'GitHub'
         self.text = translate(self.en, self.fr, self.ru, self.hy, self)
+    def on_release(self, *args):
+        webbrowser.open('https://github.com/dolutio')

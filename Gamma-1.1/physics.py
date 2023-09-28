@@ -9,7 +9,7 @@ class Physics(BoxLayout):
     orientation = 'vertial'
     def __init__(self):
         super().__init__()
-        layout = GridLayout(cols=1, spacing=10, size_hint_y=2.5)
+        layout = GridLayout(cols=1, spacing=10, size_hint_y=1)
         layout.bind(minimum_height=layout.setter('height'))
      
         ph_grand_title = Label('Physics', 'Physique', 'Физика', 'Ֆիզիկա')
@@ -75,8 +75,8 @@ class Physics(BoxLayout):
 
        
 
-        mass_formula_1 = Label(text='1.m = ρV')
-        mass_formula_2 = Label(text='2.m = F / g')
+        mass_formula_1 = Label(text='m = ρV')
+        mass_formula_2 = Label(text='m = F / g')
         
         mass_children_list = [mass_formula_1, mass_formula_2]
 
